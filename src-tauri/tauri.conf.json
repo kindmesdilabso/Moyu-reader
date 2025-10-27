@@ -1,0 +1,23 @@
+{
+  "$schema": "https://tauri.app/schemas/tauri.conf.json",
+  "build": {
+    "distDir": "dist",
+    "devPath": "http://localhost:8080"
+  },
+  "package": {
+    "productName": "MoyuReader",
+    "version": "0.1.0"
+  },
+  "tauri": {
+    "windows": [
+      {
+        "title": "Moyu Reader",
+        "width": 800,
+        "height": 600
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  }
+}

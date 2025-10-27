@@ -1,0 +1,15 @@
+[package]
+name = "moyu_reader"
+version = "0.1.0"
+authors = ["Your Name <you@example.com>"]
+edition = "2021"
+
+[dependencies]
+tauri = { version = "1", features = ["api-all"] }
+
+[build-dependencies]
+tauri-build = { version = "1" }
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = []
