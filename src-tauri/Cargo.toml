@@ -5,10 +5,10 @@ authors = ["Your Name <you@example.com>"]
 edition = "2021"
 
 [dependencies]
-tauri = { version = "1", features = ["api-all"] }
+tauri = { version = "2.9.1" }
 
 [build-dependencies]
-tauri-build = { version = "1" }
+tauri-build = { version = "2.5.1" }
 
 [features]
 default = ["custom-protocol"]

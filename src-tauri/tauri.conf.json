@@ -1,14 +1,11 @@
 {
   "$schema": "https://tauri.app/schemas/tauri.conf.json",
+  "identifier": "com.moyu.reader",
   "build": {
-    "distDir": "dist",
-    "devPath": "http://localhost:8080"
+    "beforeBuildCommand": "npm run build",
+    "beforeDevCommand": "npm run dev"
   },
-  "package": {
-    "productName": "MoyuReader",
-    "version": "0.1.0"
-  },
-  "tauri": {
+  "app": {
     "windows": [
       {
         "title": "Moyu Reader",
@@ -18,6 +15,15 @@
     ],
     "security": {
       "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": ["deb", "app", "msi"],
+    "windows": {
+      "wix": {
+        "language": "zh-CN"
+      }
     }
   }
 }

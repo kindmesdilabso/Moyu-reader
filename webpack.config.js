@@ -3,6 +3,12 @@ const outputPath = path.join(__dirname, 'dist')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 module.exports = {
+  resolve: {
+    alias: {},
+    fallback: {
+      '@tauri-apps/api/dialog': false
+    }
+  },
   target: 'web',
   mode: 'development',
   entry: {

@@ -121,13 +121,15 @@ export default class App extends React.Component {
   }
 
   /****  选择文件  ****/
-  checkFile = () => {
-    let file = window.utools.showOpenDialog({
-      filters: [{ 'name': 'Txt', extensions: ['txt','epub','mobi'] }],
-      properties: ['openFile']
-    })
-    if(file && file.length > 0){
-      this.addBook(file[0]);
+  checkFile = async () => {
+    const { tauriShowOpenDialog } = await import('./fileDialog');
+    const file = await tauriShowOpenDialog();
+    if(file){
+      if(Array.isArray(file)){
+        this.addBook(file[0]);
+      } else {
+        this.addBook(file);
+      }
     } else {
       console.log("user cancel");
     }
